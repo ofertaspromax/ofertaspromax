@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas Pro Max</title>
+    <link rel="icon" type="image/png" href="isotipo.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --amarillo: #f0a830;
+        --azul: #1e2d6b;
+        --azul-claro: #2a3e8f;
+        --fondo: #f5f6fa;
+        --blanco: #ffffff;
+        --gris: #8a8fa8;
+        --borde: #e4e6ef;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: var(--fondo);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        background: var(--blanco);
+        border-radius: 28px;
+        padding: 2.5rem 1.75rem 2rem;
+        width: 100%;
+        max-width: 380px;
+        border: 1px solid var(--borde);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Logo */
+      .logo-wrap {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 3px solid var(--amarillo);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-bottom: 1.1rem;
+      }
+      .logo-wrap img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+      }
+
+      /* Nombre y tagline */
+      .brand-name {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--azul);
+        letter-spacing: -0.3px;
+        margin-bottom: 4px;
+        text-align: center;
+      }
+      .brand-name span {
+        color: var(--amarillo);
+      }
+
+      .tagline {
+        font-size: 13px;
+        color: var(--gris);
+        font-weight: 400;
+        margin-bottom: 2rem;
+        text-align: center;
+        letter-spacing: 0.3px;
+      }
+
+      /* Botones */
+      .btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 13px 16px;
+        border-radius: 16px;
+        border: 1px solid var(--borde);
+        background: var(--blanco);
+        cursor: pointer;
+        margin-bottom: 10px;
+        text-decoration: none;
+        transition:
+          transform 0.12s ease,
+          border-color 0.12s ease,
+          background 0.12s ease;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        border-color: var(--amarillo);
+        background: #fffbf3;
+      }
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      .btn-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .btn-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .btn-text {
+        flex: 1;
+      }
+      .btn-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--azul);
+        display: block;
+        line-height: 1.2;
+      }
+      .btn-sub {
+        font-size: 12px;
+        color: var(--gris);
+        display: block;
+        margin-top: 2px;
+        font-weight: 400;
+      }
+      .btn-arrow {
+        font-size: 18px;
+        color: var(--amarillo);
+        font-weight: 700;
+      }
+
+      .categorias {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1.75rem;
+      }
+      .chip {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--azul);
+        background: #eef1fa;
+        border: 1px solid #c8d0ee;
+        border-radius: 20px;
+        padding: 5px 13px;
+        letter-spacing: 0.2px;
+      }
+      .divider {
+        width: 40px;
+        height: 2px;
+        background: var(--amarillo);
+        border-radius: 2px;
+        margin: 1.5rem 0 1.25rem;
+        opacity: 0.4;
+      }
+
+      .footer {
+        font-size: 11px;
+        color: var(--azul);
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        opacity: 0.5;
+      }
+
+      /* Animación de caída marcada con rebote fuerte */
+      @keyframes dropIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-120px) scale(0.8) rotate(-2deg);
+        }
+        55% {
+          opacity: 1;
+          transform: translateY(18px) scale(1.06) rotate(1deg);
+        }
+        72% {
+          transform: translateY(-10px) scale(0.97) rotate(-0.5deg);
+        }
+        86% {
+          transform: translateY(6px) scale(1.02) rotate(0.3deg);
+        }
+        94% {
+          transform: translateY(-3px) scale(0.99);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(0deg);
+        }
+      }
+
+      .drop {
+        opacity: 0;
+        animation: dropIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      .d1 {
+        animation-delay: 0.05s;
+      }
+      .d2 {
+        animation-delay: 0.22s;
+      }
+      .d3 {
+        animation-delay: 0.38s;
+      }
+      .d4 {
+        animation-delay: 0.54s;
+      }
+      .d5 {
+        animation-delay: 0.7s;
+      }
+      .d6 {
+        animation-delay: 0.86s;
+      }
+      .d7 {
+        animation-delay: 0.96s;
+      }
+      .d8 {
+        animation-delay: 1.06s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="logo-wrap drop d1">
+        <!-- Reemplaza "Logo.png" con la ruta de tu logo -->
+        <img src="isotipo.png" alt="Ofertas Pro Max" />
+      </div>
+
+      <p class="brand-name drop d2"><span>Ofertas</span> Pro Max</p>
+      <p class="tagline drop d2">Ahorra en cada compra</p>
+
+      <div class="categorias drop d3">
+        <span class="chip">⚡ Tecnología</span>
+        <span class="chip">🏠 Hogar</span>
+        <span class="chip">✨ Cuidado Personal</span>
+      </div>
+
+      <a
+        class="btn drop d4"
+        href="https://whatsapp.com/channel/0029VbD0dX8CnA7ysScewK2x"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="btn-icon" style="background: #e8f8ee">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+              fill="#25D366"
+            />
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.413A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+              stroke="#25D366"
+              stroke-width="1.5"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">Canal de WhatsApp</span>
+          <span class="btn-sub">Ofertas diarias al instante</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- TELEGRAM — reemplaza "tucanal" con tu usuario de Telegram -->
+      <a
+        class="btn drop d5"
+        href="https://t.me/ofertaspromax_mx"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="btn-icon" style="background: #e8f4fd">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" fill="#229ED9" />
+            <path
+              d="M17.207 7.307l-2.326 10.98c-.175.786-.633.977-1.283.608l-3.55-2.617-1.713 1.648c-.19.19-.348.348-.713.348l.254-3.604 6.554-5.92c.285-.254-.062-.395-.443-.14L6.19 13.757l-3.494-1.093c-.759-.237-.773-.759.158-1.124l13.65-5.265c.633-.237 1.188.14.703 1.032z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">Canal de Telegram</span>
+          <span class="btn-sub">Las mejores ofertas, directo aquí</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- TIKTOK — reemplaza "@tuusuario" con tu usuario de TikTok -->
+      <a
+        class="btn drop d6"
+        href="https://www.tiktok.com/@ofertas.pro.max"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="btn-icon" style="background: #fff0f3">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.22 8.22 0 004.8 1.54V6.78a4.85 4.85 0 01-1.03-.09z"
+              fill="#ee1d52"
+            />
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">TikTok</span>
+          <span class="btn-sub">Reviews y mejores ofertas</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <div class="divider drop d7"></div>
+      <span class="footer drop d8">Ofertas Pro Max</span>
+    </div>
+  </body>
+</html>
