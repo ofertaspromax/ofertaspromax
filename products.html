@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas Pro Max — Productos</title>
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styleProducts.css" />
+  </head>
+  <body>
+    <div class="header">
+      <a class="header-back" href="index.html">‹</a>
+      <div class="header-logo">
+        <img src="isotipo.png" alt="Ofertas Pro Max" />
+      </div>
+      <span class="header-title"><span>Ofertas</span> Pro Max</span>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro active" onclick="filtrar('todos')">Todos</button>
+      <button class="filtro" onclick="filtrar('ml')">Mercado Libre</button>
+      <button class="filtro" onclick="filtrar('amazon')">Amazon</button>
+      <button class="filtro" onclick="filtrar('tecnologia')">Tecnología</button>
+      <button class="filtro" onclick="filtrar('hogar')">Hogar</button>
+      <button class="filtro" onclick="filtrar('cuidado')">
+        Cuidado Personal
+      </button>
+    </div>
+
+    <p class="contador">Mostrando <span id="count">3</span> ofertas</p>
+
+    <div class="grid" id="grid">
+      <!-- Producto 1 — Sillas Plegables -->
+      <div class="card" data-plataforma="ml" data-categoria="hogar">
+        <img
+          class="card-img"
+          src="https://http2.mlstatic.com/D_NQ_NP_2X_923185-MLA96098759251_102025-F.webp"
+          alt="Sillas Plegables"
+          onerror="this.src = 'Logo.png'"
+        />
+        <div class="card-badge">
+          <span class="badge-desc">54% OFF</span>
+          <span class="badge-ml">Mercado Libre</span>
+          <span class="badge-top">Más vendido</span>
+        </div>
+        <div class="card-body">
+          <p class="card-nombre">Paquete 6 Sillas Plegables Blancas</p>
+          <div class="card-precios">
+            <span class="precio-antes">$4,400</span>
+            <span class="precio-ahora">$1,999</span>
+          </div>
+          <p class="card-extra">$333 por silla · 24 meses de $120</p>
+          <p class="card-estrellas">
+            <span class="estrellas">★★★★★</span> 4.8 (3,134)
+          </p>
+        </div>
+        <!-- Reemplaza con tu link de afiliado de Mercado Libre -->
+        <a
+          class="card-btn"
+          href="https://meli.la/2vUbCzQ"
+          target="_blank"
+          rel="noopener"
+          >Ver oferta →</a
+        >
+      </div>
+
+      <!-- Producto 2 — Carpa Toldo -->
+      <div class="card" data-plataforma="ml" data-categoria="cuidado">
+        <img
+          class="card-img"
+          src="https://http2.mlstatic.com/D_NQ_NP_2X_771019-MLA106134790820_022026-F.webp"
+          alt="Carpa Toldo"
+          onerror="this.src = 'Logo.png'"
+        />
+        <div class="card-badge">
+          <span class="badge-desc">56% OFF</span>
+          <span class="badge-ml">Mercado Libre</span>
+          <span class="badge-top">N°1 en Toldos</span>
+        </div>
+        <div class="card-body">
+          <p class="card-nombre">Carpa Toldo Plegable 3x3 Impermeable Styrka</p>
+          <div class="card-precios">
+            <span class="precio-antes">$1,950</span>
+            <span class="precio-ahora">$842</span>
+          </div>
+          <p class="card-extra">24 meses de $50 · 6 colores</p>
+          <p class="card-estrellas">
+            <span class="estrellas">★★★★☆</span> 4.5 (12,165)
+          </p>
+        </div>
+        <!-- Reemplaza con tu link de afiliado de Mercado Libre -->
+        <a
+          class="card-btn"
+          href="https://meli.la/1iuNEwt"
+          target="_blank"
+          rel="noopener"
+          >Ver oferta →</a
+        >
+      </div>
+
+      <div class="card" data-plataforma="ml" data-categoria="hogar">
+        <img
+          class="card-img"
+          src="https://http2.mlstatic.com/D_NQ_NP_2X_703349-MLA81598797996_012025-F.webp"
+          alt="Eucerin Anti-pigment"
+          onerror="this.src = 'Logo.png'"
+        />
+        <div class="card-badge">
+          <span class="badge-desc">57% OFF</span>
+          <span class="badge-ml">Mercado Libre</span>
+          <span class="badge-top">Eucerin</span>
+        </div>
+        <div class="card-body">
+          <p class="card-nombre">
+            Eucerin Anti-pigment Dual Sérum Facial Anti-manchas 30ml
+          </p>
+          <div class="card-precios">
+            <span class="precio-antes">$1,407</span>
+            <span class="precio-ahora">$593</span>
+          </div>
+          <p class="card-extra">24 meses de $35</p>
+          <p class="card-estrellas">
+            <span class="estrellas">★★★★☆</span> 4.7 (5061)
+          </p>
+        </div>
+        <!-- Reemplaza con tu link de afiliado de Mercado Libre -->
+        <a
+          class="card-btn"
+          href="https://meli.la/1iuNEwt"
+          target="_blank"
+          rel="noopener"
+          >Ver oferta →</a
+        >
+      </div>
+
+      <!-- Producto 3 — Ejemplo Amazon (reemplaza con producto real) -->
+      <!-- <div class="card" data-plataforma="amazon" data-categoria="tecnologia">
+        <img class="card-img" src="Logo.png" alt="Producto Amazon" />
+        <div class="card-badge">
+          <span class="badge-desc">XX% OFF</span>
+          <span class="badge-amz">Amazon</span>
+        </div>
+        <div class="card-body">
+          <p class="card-nombre">Agrega aquí tu producto de Amazon</p>
+          <div class="card-precios">
+            <span class="precio-antes">$0,000</span>
+            <span class="precio-ahora">$0,000</span>
+          </div>
+          <p class="card-extra">Descripción corta del producto</p>
+          <p class="card-estrellas">
+            <span class="estrellas">★★★★★</span> 0.0 (0)
+          </p>
+        </div>
+        <a
+          class="card-btn"
+          href="TU_LINK_AFILIADO_AMAZON"
+          target="_blank"
+          rel="noopener"
+          >Ver oferta →</a
+        >
+      </div> -->
+    </div>
+
+    <p class="empty" id="empty">No hay productos en esta categoría aún.</p>
+
+    <script>
+      function filtrar(tipo) {
+        document
+          .querySelectorAll(".filtro")
+          .forEach((f) => f.classList.remove("active"));
+        event.target.classList.add("active");
+
+        const cards = document.querySelectorAll(".card");
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const plat = card.dataset.plataforma;
+          const cat = card.dataset.categoria;
+          const show = tipo === "todos" || tipo === plat || tipo === cat;
+
+          card.classList.toggle("hidden", !show);
+          if (show) visible++;
+        });
+
+        document.getElementById("count").textContent = visible;
+        document.getElementById("empty").style.display =
+          visible === 0 ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
